@@ -1,0 +1,10 @@
+plugin: aws_ec2
+regions:
+  - ap-south-1
+- name: Copy file with owner and permissions
+  ansible.builtin.copy:
+    src: /var/lib/jenkins/workspace/guruji/target/petclinic.war
+    dest: ssh root@172.31.39.80 /root/tomcat/webapps
+    owner: root
+    group: root
+    mode: '0777'
